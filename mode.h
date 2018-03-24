@@ -40,6 +40,10 @@ class ControlContext {
     Mode * mode;
     // Constructor;
     ControlContext(Motor * motor_left, Motor * motor_right);
+    // Set power of both motors.
+    void set_power(int power_left, int power_right);
+    // Stop both motors.
+    void stop();
     // Set left motor power.
     void set_power_left(int power);
     // Set right motor power.

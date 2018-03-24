@@ -19,10 +19,10 @@ ManualMode::ManualMode(ControlContext * ctx) {
 void ManualMode::handle_ir_keypress(unsigned long key_value) {
   this->last_keypress_timestamp_ms = millis();
   switch (key_value) {
-    case IR_KEY_N: this->ctx->set_power_left(255); this->ctx->set_power_right(255); break;
-    case IR_KEY_S: this->ctx->set_power_left(-255); this->ctx->set_power_right(-255); break;
-    case IR_KEY_E: this->ctx->set_power_left(150); this->ctx->set_power_right(-150); break;
-    case IR_KEY_W: this->ctx->set_power_left(-150); this->ctx->set_power_right(150); break;
+    case IR_KEY_N: this->ctx->set_power(255, 255); break;
+    case IR_KEY_S: this->ctx->set_power(-255, -255); break;
+    case IR_KEY_E: this->ctx->set_power(150, -150); break;
+    case IR_KEY_W: this->ctx->set_power(-150, 150); break;
     case IR_KEY_0:
     case IR_KEY_1:
     case IR_KEY_2:
@@ -41,8 +41,7 @@ void ManualMode::handle_ir_keypress(unsigned long key_value) {
 
 void ManualMode::control() {
   if (millis() - last_keypress_timestamp_ms > IR_WAIT_MS) {
-    this->ctx->stop_left();
-    this->ctx->stop_right();
+    this->ctx->stop();
   };
 }
 

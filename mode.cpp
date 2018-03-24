@@ -9,6 +9,16 @@ ControlContext::ControlContext(Motor * motor_left, Motor * motor_right) {
   this->motor_right = motor_right;
 }
 
+void ControlContext::set_power(int left_power, int right_power) {
+  this->set_power_left(left_power);
+  this->set_power_right(right_power);
+}
+
+void ControlContext::stop() {
+  this->stop_left();
+  this->stop_right();
+}
+
 void ControlContext::set_power_right(int power) {
   this->motor_right->set_power(power);
 }

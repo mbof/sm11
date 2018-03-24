@@ -70,12 +70,12 @@ void DanceMode::control() {
     return;
   }
   switch (this->current_dance[dance_position_int]) {
-    case 'F': this->ctx->set_power_left(255); this->ctx->set_power_right(255); break;
-    case 'B': this->ctx->set_power_left(-255); this->ctx->set_power_right(-255); break;
-    case 'L': this->ctx->set_power_left(150); this->ctx->set_power_right(-150); break;
-    case 'R': this->ctx->set_power_left(-150); this->ctx->set_power_right(150); break;
-    case '-': this->ctx->set_power_left(0); this->ctx->set_power_right(0); break;
-    default: this->ctx->stop_left(); this->ctx->stop_right(); break;
+    case 'F': this->ctx->set_power(255, 255); break;
+    case 'B': this->ctx->set_power(-255, -255); break;
+    case 'L': this->ctx->set_power(150, -150); break;
+    case 'R': this->ctx->set_power(-150, 150); break;
+    case '-': this->ctx->set_power(0, 0); break;
+    default: this->ctx->stop(); break;
   }
 }
 

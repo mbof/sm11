@@ -59,11 +59,11 @@ void UltrasoundMode::control() {
   unsigned long distance_cm = measure_ultrasound_distance_cm();
   if (distance_cm > ULTRASOUND_OBSTACLE_DISTANCE_CM) {
     // No obstacle: advance... slowly.
-    this->ctx->set_power_left(100); this->ctx->set_power_right(100);
+    this->ctx->set_power(100, 100);
   } else {
     last_obstacle_encounter_timestamp_ms = millis();
     // Obstacle: start turning.
-    this->ctx->set_power_left(150); this->ctx->set_power_right(-150);
+    this->ctx->set_power(150, -150);
     Buzzer::start(100);
   }
 }
