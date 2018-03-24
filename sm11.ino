@@ -4,6 +4,7 @@
 #include "mode_dance.h"
 #include "mode_manual.h"
 #include "mode_setmode.h"
+#include "mode_track.h"
 #include "mode_ultrasound.h"
 #include "motor.h"
 #include "sm11_pinout.h"
@@ -30,6 +31,7 @@ ManualMode manual_mode(&ctx);
 SetModeMode set_mode_mode(&ctx);
 DanceMode dance_mode(&ctx);
 UltrasoundMode ultrasound_mode(&ctx);
+TrackMode track_mode(&ctx);
 
 
 // Setup.

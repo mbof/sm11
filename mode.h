@@ -16,6 +16,8 @@ typedef enum {
   CTRL_MODE_DANCE,
   // Advance until an obstacle is detected with ultrasound, turn, repeat.
   CTRL_MODE_ULTRASOUND_CRAZY,
+  // Follow a line on the ground.
+  CTRL_MODE_TRACK_LINE,
   // Last value (used to define the length of an array indexed by modes)
   CTRL_MODE_LAST_VALUE
 } CtrlMode;
