@@ -24,8 +24,7 @@ UltrasoundMode::UltrasoundMode(ControlContext * ctx) {
 }
 
 void UltrasoundMode::handle_ir_keypress(unsigned long key_value) {
-  this->ctx->set_mode(CTRL_MODE_INFRARED_MANUAL);
-  this->ctx->mode->handle_ir_keypress(key_value);
+  this->ctx->maybe_yield_to_manual(key_value);
 }
 
 unsigned long measure_ultrasound_distance_cm() {

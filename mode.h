@@ -58,6 +58,8 @@ class ControlContext {
     void register_mode(CtrlMode ctrl_mode, Mode * mode);
     // Set next control mode.
     void set_mode(CtrlMode ctrl_mode);
+    // Consider yielding to manual mode if user is pressing direction keys.
+    void maybe_yield_to_manual(unsigned long key_value);
   private:
     Mode * mode_registry[CTRL_MODE_LAST_VALUE];
 };

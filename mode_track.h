@@ -12,6 +12,8 @@ class TrackMode : public Mode {
     virtual void handle_ir_keypress(unsigned long key_value);
     // This method will be called in the control loop.
     virtual void control();
+  private:
+    unsigned long last_turn_start_ms;
 };
 
 #endif

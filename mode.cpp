@@ -1,5 +1,6 @@
 // Abstract base class for modes of the car.
 
+#include "ir_keys.h"
 #include "mode.h"
 #include "motor.h"
 
@@ -42,5 +43,17 @@ void ControlContext::set_mode(CtrlMode ctrl_mode) {
 
 void ControlContext::register_mode(CtrlMode ctrl_mode, Mode * mode) {
   this->mode_registry[ctrl_mode] = mode;
+}
+
+void ControlContext::maybe_yield_to_manual(unsigned long key_value) {
+  switch (key_value) {
+    case IR_KEY_N:
+    case IR_KEY_S:
+    case IR_KEY_E:
+    case IR_KEY_W:
+      this->set_mode(CTRL_MODE_INFRARED_MANUAL);
+      this->mode->handle_ir_keypress(key_value);
+      return;
+  }
 }
 

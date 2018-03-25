@@ -18,6 +18,7 @@ void SetModeMode::handle_ir_keypress(unsigned long key_value) {
     case IR_KEY_1: this->next_mode = CTRL_MODE_INFRARED_MANUAL; break;
     case IR_KEY_2: this->next_mode = CTRL_MODE_DANCE; break;
     case IR_KEY_3: this->next_mode = CTRL_MODE_ULTRASOUND_CRAZY; break;
+    case IR_KEY_4: this->next_mode = CTRL_MODE_TRACK_LINE; break;
     case IR_KEY_HASH: this->ctx->set_mode(this->next_mode); break;
     default: return;
   }

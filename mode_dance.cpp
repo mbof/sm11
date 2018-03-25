@@ -44,8 +44,7 @@ void DanceMode::handle_ir_keypress(unsigned long key_value) {
     case IR_KEY_8: this->start_dance(8); break;
     case IR_KEY_9: this->start_dance(9); break;
     default:
-      this->ctx->set_mode(CTRL_MODE_INFRARED_MANUAL);
-      this->ctx->mode->handle_ir_keypress(key_value);
+      this->ctx->maybe_yield_to_manual(key_value);
       return;
   }
 }
