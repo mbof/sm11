@@ -29,11 +29,11 @@ void ControlContext::set_power_left(int power) {
 }
 
 void ControlContext::stop_left() {
-  this->motor_left->stop_motor(false);
+  this->motor_left->stop_motor();
 }
 
 void ControlContext::stop_right() {
-  this->motor_right->stop_motor(false);
+  this->motor_right->stop_motor();
 }
 
 void ControlContext::set_mode(CtrlMode ctrl_mode) {
