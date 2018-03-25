@@ -16,10 +16,10 @@ const char dances[CTRL_DANCE_COUNT][CTRL_DANCE_LENGTH + 1] = {
   "L.L.L.L.R.R.R.R.F.B.", // 2
   "L.R.L...R.L.R...LRLR", // 3
   "F.B.F...B.F.B...LRLR", // 4
-  "FFFF--------........", // 5
-  "FFFF................", // 6
-  "FFFFFFFF------------", // 7
-  "FFFFFFFF............", // 8
+  "FR.BL.FL.BR.RF.LB..F", // 5
+  "L.RLR.L...R.L...RLLR", // 6
+  "LRLR....RLRL....RLLR", // 7
+  "FBFBFBFBLRRLRLLRBFBF", // 8
   "F...B..RF...BL..RLLR"  // 9
 };
 
