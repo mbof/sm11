@@ -17,11 +17,11 @@ implemented:
 
 * Ultrasound obstacle-avoiding mode
 
+* Line-following mode
+
 * (New) Pre-programmed "dances"
 
 
 Currently unimplemented:
-
-* Line-following mode
 
 * Infrared proximity sensor obstacle-avoiding mode
