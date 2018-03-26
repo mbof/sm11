@@ -3,6 +3,8 @@
 #ifndef sm11_pinout_h
 #define sm11_pinout_h
 
+#include <Arduino.h>
+
 #define PIN_INFRARED_RECV 2
 #define PIN_LEFT_LED 3
 #define PIN_RIGHT_LED 4

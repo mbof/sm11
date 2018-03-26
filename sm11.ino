@@ -2,6 +2,7 @@
 #include "ir_keys.h"
 #include "mode.h"
 #include "mode_dance.h"
+#include "mode_follow.h"
 #include "mode_manual.h"
 #include "mode_setmode.h"
 #include "mode_track.h"
@@ -32,6 +33,7 @@ SetModeMode set_mode_mode(&ctx);
 DanceMode dance_mode(&ctx);
 UltrasoundMode ultrasound_mode(&ctx);
 TrackMode track_mode(&ctx);
+FollowMode follow_mode(&ctx);
 
 
 // Setup.
