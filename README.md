@@ -1,5 +1,3 @@
-Control sketch for the .
-
 ## Introduction
 
 This is a control sketch for the [Kuman SM11 Arduino UNO car kit](http://www.kumantech.com/kuman-arduino-uno-bluetooth-irafred-remote-control-smart-robot-car-kit-sm11_p0415.html),
