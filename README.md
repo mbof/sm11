@@ -59,3 +59,29 @@ again.
 on white background, it will follow the black line by moving forward and adjusting its
 bearing left or right when its line-tracking sensors (downwards-pointing sensors
 close to the ground) detect that it's hitting the black line.
+
+## Architecture and how to extend
+
+The architecture of the code is as follows:
+
+* The `ControlContext` class, defined in `mode.cpp`, takes care of high-level "executive"
+control of the car: which mode is it in, should it go forwards, backwards, or turn left,
+etc.
+
+* The modes themselves are implemented in the `mode_manual.cpp`, `mode_dance.cpp`,
+`mode_ultrasound.cpp` and `mode_track.cpp` files. Each mode provides at least two
+functions:
+  - `handle_ir_keypress`, which gets called each time a key is pressed on the
+infrared remote; and
+  - `control`, which gets called every loop.
+
+* The low-level outputs (motor & buzzer) are controlled in the `Motor` and `Buzzer`
+classes' respective `control` functions, which are called once every loop.
+
+* The loop first evaluates whether an infrared keypress has been received; if so, then
+it is passed to the control context for processing, which passes it on to the correct
+mode; then, it calls the `control()` method for the mode; finally it calls the
+`control()` method for the low-level controllers.
+
+To extend the functionality, refer to this [example commit](https://github.com/mbof/sm11/commit/16faaa354a73bb84aac7c4a372524a20ac0ce7b6) which
+implements line-tracking functionality.
