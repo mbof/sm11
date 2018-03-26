@@ -13,12 +13,12 @@ implemented are the following:
 
 * Line-following mode
 
+* Object follow mode with infrared proximity sensor
+
 * (New) Pre-programmed "dances"
 
 
 Currently unimplemented:
-
-* Infrared proximity sensor obstacle-avoiding mode and follow mode
 
 * Bluetooth control
 
